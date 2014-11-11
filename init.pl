@@ -1,9 +1,15 @@
-start :- 
-	write('Enter expression: '), read(X), verify(X).
+and(A,B) :- A, B.
 
-verify(X) :- 
-	writef("%s", [X]),
-	count(X).
+or(A,_) :- A.
+or(_,B) :- B.
 
-count(X) :-
-	writef("%s", ["Counting variables..."]).
+impl(A,B) :- or(not(A),B).
+
+bind(true).
+bind(fail).
+
+table(A,B,Expr) :- bind(A), bind(B), do(A,B,Expr), fail.
+
+do(A,B,_) :- write(A), write('  '), write(B), write('  '), fail.
+do(_,_,Expr) :- Expr, !, write(true), nl.
+do(_,_,_) :- write(fail), nl.
