@@ -1,8 +1,8 @@
 Reex-Prolog
 ===========
-Prolog installing OSX
-Homebrew: http://brew.sh/
-Prolog: brew install swi-prolog
+Prolog installing OSX<br>
+Homebrew: http://brew.sh/<br>
+Prolog: brew install swi-prolog<br>
 Command: swipl
 
 By Thalisson Estrela
