@@ -11,3 +11,15 @@ equ(A,B) :- op_or(op_and(A,B), op_and(not(A),not(B))).
 op_xor(A,B) :- not(equ(A,B)).
 /* Realiza a "Bi-Impicação" da lógica proposicional, só vai ser verdadeiro, se caso as duas for falso, ou verdadeiro */
 bimp(A,B) :- not(op_xor(A,B)).
+
+bind(true).
+bind(fail).
+
+table(A,B,Expr) :- bind(A), bind(B), do(A,B,Expr), fail.
+
+do(A,B,_) :- write(A), write('  '), write(B), write('  '), fail.
+do(_,_,Expr) :- Expr, !, write(true), nl.
+do(_,_,_) :- write(fail), nl.
+
+
+/* worked: table(A,B,op_and(A,op_or(A,B))). */
