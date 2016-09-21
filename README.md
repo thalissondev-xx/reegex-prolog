@@ -2,7 +2,7 @@
 
 Prolog installing OSX 
 
-Homebrew [http://brew.sh/](go homebrew) 
+[Homebrew](http://brew.sh/) 
 
 Prolog install
 ```sh
